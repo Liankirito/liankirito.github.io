@@ -78,18 +78,20 @@
     <div id="app">
         <h1>My GitHub Projects</h1>
         <div class="container">
-            <div v-for="project in projects" :key="project.id" class="project-card">
-                <div class="project-card-content">
-                    <h2>{{ project.name }}</h2>
-                    <p>{{ project.description || 'This project does not have a description.' }}</p>
+            <div v-for="project in projects" :key="project.id">
+                <div v-if="project.name != 'liankirito.github.io'" class="project-card">
+                    <div class="project-card-content">
+                        <h2>{{ project.name }}</h2>
+                        <p>{{ project.description || 'This project does not have a description.' }}</p>
+                    </div>
+                    <a :href="project.html_url" target="_blank">View Project</a>
                 </div>
-                <a :href="project.html_url" target="_blank">View Project</a>
             </div>
         </div>
         <h1>My Certificates</h1>
         <div>
             <h2>其他資料</h2>
-            <iframe src="作品資料.pdf" width="600" height="400"></iframe>
+            <iframe src="作品資料.pdf" width="300" height="200"></iframe>
         </div>
     </div>
 
